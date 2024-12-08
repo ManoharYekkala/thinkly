@@ -6,8 +6,8 @@ import {
     AuthLoading,
     ConvexReactClient
 } from "convex/react"
-import SignInAuthComponent from "@/components/ui/auth/signin";
-import Loading from "@/components/ui/auth/loading";
+import SignInAuthComponent from "@/components/auth/signin";
+import Loading from "@/components/auth/loading";
 
 interface ConvexClientProviderProps {
     children: React.ReactNode;
