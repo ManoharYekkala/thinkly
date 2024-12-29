@@ -36,6 +36,20 @@ function SignInAuthComponent() {
     }
   };
 
+  const signInProps = {
+    routing: "hash" as const,
+    appearance: commonAppearance,
+    afterSignInUrl: "/", 
+    redirectUrl: "/"     
+  };
+
+  const signUpProps = {
+    routing: "hash" as const,
+    appearance: commonAppearance,
+    afterSignUpUrl: "/", 
+    redirectUrl: "/"     
+  };
+
   return (    
     <SignedOut>
       <div className="min-h-screen w-full bg-gradient-to-br from-orange-200 via-orange-100 to-orange-200 flex items-center justify-center p-4">
@@ -113,15 +127,9 @@ function SignInAuthComponent() {
               >
                 <div className="w-full max-w-sm mx-auto">
                   {isSignIn ? (
-                    <SignIn 
-                      routing="hash" 
-                      appearance={commonAppearance}
-                    />
+                    <SignIn {...signInProps} />
                   ) : (
-                    <SignUp 
-                      routing="hash" 
-                      appearance={commonAppearance}
-                    />
+                    <SignUp {...signUpProps} />
                   )}
                 </div>
               </motion.div>
