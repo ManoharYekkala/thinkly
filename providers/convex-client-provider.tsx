@@ -1,6 +1,6 @@
 "use client";
 
-import { ClerkProvider, SignedIn, useAuth } from "@clerk/nextjs"
+import { ClerkProvider, SignedIn, SignedOut, useAuth } from "@clerk/nextjs"
 import { ConvexProviderWithClerk } from "convex/react-clerk"
 import {
     AuthLoading,
@@ -27,7 +27,9 @@ export const ConvexClientProvider= ({ children, }: ConvexClientProviderProps) =>
                 <SignedIn>
                     {children}
                 </SignedIn>
-                <SignInAuthComponent/>
+                <SignedOut>
+                    <SignInAuthComponent />
+                </SignedOut>
             </ConvexProviderWithClerk>
         </ClerkProvider>
     )
